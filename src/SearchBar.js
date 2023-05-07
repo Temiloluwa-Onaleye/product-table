@@ -17,7 +17,13 @@ const Searchbar = ({
         }}
       />
       <label>
-        <input type="checkbox" checked={inStockOnly} />
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(event) => {
+            onInStockOnlyChange(event.target.checked);
+          }}
+        />
         Only show products in stock
       </label>
     </form>
