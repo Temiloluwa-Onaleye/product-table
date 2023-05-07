@@ -1,6 +1,6 @@
 import React from "react";
 
-const Searchbar = () => {
+const Searchbar = ({ filterText, inStockOnly }) => {
   return (
     <form>
       <input type="text" placeholder="search..." />
