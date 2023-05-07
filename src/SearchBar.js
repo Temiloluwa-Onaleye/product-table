@@ -1,11 +1,23 @@
 import React from "react";
 
-const Searchbar = ({ filterText, inStockOnly }) => {
+const Searchbar = ({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}) => {
   return (
     <form>
-      <input type="text" placeholder="search..." />
+      <input
+        type="text"
+        placeholder="search..."
+        value={filterText}
+        onChange={(event) => {
+          onFilterTextChange(event.target.value);
+        }}
+      />
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" checked={inStockOnly} />
         Only show products in stock
       </label>
     </form>
